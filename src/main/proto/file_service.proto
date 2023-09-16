@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.zoominfo.drive";
+option java_outer_classname = "FileServiceProto";
+
+package file_service;
+
+service FileService {
+  rpc login(LoginRequest) returns (LoginResponse);
+  //rpc signup(SignupRequest) returns (SignupResponse);
+  //rpc uploadFile(UploadFileRequest) returns (UploadFileResponse);
+  //rpc uploadFolder(UploadFolderRequest) returns (UploadFolderResponse);
+  //rpc downloadFile(DownloadFileRequest) returns (DownloadFileResponse);
+  //rpc deleteFile(DeleteFileRequest) returns (DeleteFileResponse);
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+  bool success = 2;
+  string message = 3;
+}
+
+//message SignupRequest {
+//  string username = 1;
+//  string password = 2;
+//  string email = 3;
+//
+//}
+//
+//message SignupResponse {
+//  string message = 1;
+//}
+//
+//message UploadFileRequest {
+//  string token = 1;
+//  string filename = 2;
+//  bytes data = 3;
+//}
+//
+//message UploadFileResponse {
+//  string message = 1;
+//}
+//
+//message UploadFolderRequest {
+//  string token = 1;
+//  string folderName = 2;
+//  repeated UploadFileRequest files = 3;
+//}
+//
+//message UploadFolderResponse {
+//  string message = 1;
+//}
+//
+//message DownloadFileRequest {
+//  string token = 1;
+//  string filename = 2;
+//}
+//
+//message DownloadFileResponse {
+//  bytes data = 1;
+//}
+//
+//message DeleteFileRequest {
+//  string token = 1;
+//  string filename = 2;
+//}
+//
+//message DeleteFileResponse {
+//  string message = 1;
+//}
