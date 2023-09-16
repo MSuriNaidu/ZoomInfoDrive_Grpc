@@ -24,6 +24,56 @@ public final class FileServiceProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_file_service_LoginResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_SignupRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_SignupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_SignupResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_SignupResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_UploadFileRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_UploadFileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_UploadFileResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_UploadFileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_UploadFolderRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_UploadFolderRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_UploadFolderResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_UploadFolderResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_DownloadFileRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_DownloadFileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_DownloadFileResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_DownloadFileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_DeleteFileRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_DeleteFileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_file_service_DeleteFileResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_file_service_DeleteFileResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -36,11 +86,25 @@ public final class FileServiceProto {
       "\n\022file_service.proto\022\014file_service\"2\n\014Lo" +
       "ginRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010password" +
       "\030\002 \001(\t\"@\n\rLoginResponse\022\r\n\005token\030\001 \001(\t\022\017" +
-      "\n\007success\030\002 \001(\010\022\017\n\007message\030\003 \001(\t2O\n\013File" +
-      "Service\022@\n\005login\022\032.file_service.LoginReq" +
-      "uest\032\033.file_service.LoginResponseB(\n\022org" +
-      ".zoominfo.driveB\020FileServiceProtoP\001b\006pro" +
-      "to3"
+      "\n\007success\030\002 \001(\010\022\017\n\007message\030\003 \001(\t\"B\n\rSign" +
+      "upRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030" +
+      "\002 \001(\t\022\r\n\005email\030\003 \001(\t\"2\n\016SignupResponse\022\017" +
+      "\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"B\n\021Uplo" +
+      "adFileRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010filename" +
+      "\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\"%\n\022UploadFileRespon" +
+      "se\022\017\n\007message\030\001 \001(\t\"h\n\023UploadFolderReque" +
+      "st\022\r\n\005token\030\001 \001(\t\022\022\n\nfolderName\030\002 \001(\t\022.\n" +
+      "\005files\030\003 \003(\0132\037.file_service.UploadFileRe" +
+      "quest\"\'\n\024UploadFolderResponse\022\017\n\007message" +
+      "\030\001 \001(\t\"6\n\023DownloadFileRequest\022\r\n\005token\030\001" +
+      " \001(\t\022\020\n\010filename\030\002 \001(\t\"$\n\024DownloadFileRe" +
+      "sponse\022\014\n\004data\030\001 \001(\014\"4\n\021DeleteFileReques" +
+      "t\022\r\n\005token\030\001 \001(\t\022\020\n\010filename\030\002 \001(\t\"%\n\022De" +
+      "leteFileResponse\022\017\n\007message\030\001 \001(\t2O\n\013Fil" +
+      "eService\022@\n\005login\022\032.file_service.LoginRe" +
+      "quest\032\033.file_service.LoginResponseB(\n\022or" +
+      "g.zoominfo.driveB\020FileServiceProtoP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -58,6 +122,66 @@ public final class FileServiceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_file_service_LoginResponse_descriptor,
         new java.lang.String[] { "Token", "Success", "Message", });
+    internal_static_file_service_SignupRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_file_service_SignupRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_SignupRequest_descriptor,
+        new java.lang.String[] { "Username", "Password", "Email", });
+    internal_static_file_service_SignupResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_file_service_SignupResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_SignupResponse_descriptor,
+        new java.lang.String[] { "Success", "Message", });
+    internal_static_file_service_UploadFileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_file_service_UploadFileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_UploadFileRequest_descriptor,
+        new java.lang.String[] { "Token", "Filename", "Data", });
+    internal_static_file_service_UploadFileResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_file_service_UploadFileResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_UploadFileResponse_descriptor,
+        new java.lang.String[] { "Message", });
+    internal_static_file_service_UploadFolderRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_file_service_UploadFolderRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_UploadFolderRequest_descriptor,
+        new java.lang.String[] { "Token", "FolderName", "Files", });
+    internal_static_file_service_UploadFolderResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_file_service_UploadFolderResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_UploadFolderResponse_descriptor,
+        new java.lang.String[] { "Message", });
+    internal_static_file_service_DownloadFileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_file_service_DownloadFileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_DownloadFileRequest_descriptor,
+        new java.lang.String[] { "Token", "Filename", });
+    internal_static_file_service_DownloadFileResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_file_service_DownloadFileResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_DownloadFileResponse_descriptor,
+        new java.lang.String[] { "Data", });
+    internal_static_file_service_DeleteFileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_file_service_DeleteFileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_DeleteFileRequest_descriptor,
+        new java.lang.String[] { "Token", "Filename", });
+    internal_static_file_service_DeleteFileResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_file_service_DeleteFileResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_file_service_DeleteFileResponse_descriptor,
+        new java.lang.String[] { "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

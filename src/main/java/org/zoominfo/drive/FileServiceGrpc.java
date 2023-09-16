@@ -1,5 +1,7 @@
 package org.zoominfo.drive;
 
+import io.grpc.stub.StreamObserver;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -118,6 +120,16 @@ public final class FileServiceGrpc {
                   this, METHODID_LOGIN)))
           .build();
     }
+
+      public abstract void signup(SignupRequest request, StreamObserver<SignupResponse> responseObserver);
+
+    public abstract void uploadFile(UploadFileRequest request, StreamObserver<UploadFileResponse> responseObserver);
+
+    public abstract void uploadFolder(UploadFolderRequest request, StreamObserver<UploadFolderResponse> responseObserver);
+
+    public abstract void downloadFile(DownloadFileRequest request, StreamObserver<DownloadFileResponse> responseObserver);
+
+    public abstract void deleteFile(DeleteFileRequest request, StreamObserver<DeleteFileResponse> responseObserver);
   }
 
   /**

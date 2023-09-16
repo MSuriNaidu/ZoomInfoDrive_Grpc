@@ -26,51 +26,52 @@ message LoginResponse {
   string message = 3;
 }
 
-//message SignupRequest {
-//  string username = 1;
-//  string password = 2;
-//  string email = 3;
-//
-//}
-//
-//message SignupResponse {
-//  string message = 1;
-//}
-//
-//message UploadFileRequest {
-//  string token = 1;
-//  string filename = 2;
-//  bytes data = 3;
-//}
-//
-//message UploadFileResponse {
-//  string message = 1;
-//}
-//
-//message UploadFolderRequest {
-//  string token = 1;
-//  string folderName = 2;
-//  repeated UploadFileRequest files = 3;
-//}
-//
-//message UploadFolderResponse {
-//  string message = 1;
-//}
-//
-//message DownloadFileRequest {
-//  string token = 1;
-//  string filename = 2;
-//}
-//
-//message DownloadFileResponse {
-//  bytes data = 1;
-//}
-//
-//message DeleteFileRequest {
-//  string token = 1;
-//  string filename = 2;
-//}
-//
-//message DeleteFileResponse {
-//  string message = 1;
-//}
+message SignupRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+
+}
+
+message SignupResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message UploadFileRequest {
+  string token = 1;
+  string filename = 2;
+  bytes data = 3;
+}
+
+message UploadFileResponse {
+  string message = 1;
+}
+
+message UploadFolderRequest {
+  string token = 1;
+  string folderName = 2;
+  repeated UploadFileRequest files = 3;
+}
+
+message UploadFolderResponse {
+  string message = 1;
+}
+
+message DownloadFileRequest {
+  string token = 1;
+  string filename = 2;
+}
+
+message DownloadFileResponse {
+  bytes data = 1;
+}
+
+message DeleteFileRequest {
+  string token = 1;
+  string filename = 2;
+}
+
+message DeleteFileResponse {
+  string message = 1;
+}

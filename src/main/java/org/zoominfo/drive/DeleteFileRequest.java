@@ -4,27 +4,27 @@
 package org.zoominfo.drive;
 
 /**
- * Protobuf type {@code file_service.LoginRequest}
+ * Protobuf type {@code file_service.DeleteFileRequest}
  */
-public final class LoginRequest extends
+public final class DeleteFileRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:file_service.LoginRequest)
-    LoginRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:file_service.DeleteFileRequest)
+    DeleteFileRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use LoginRequest.newBuilder() to construct.
-  private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteFileRequest.newBuilder() to construct.
+  private DeleteFileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LoginRequest() {
-    username_ = "";
-    password_ = "";
+  private DeleteFileRequest() {
+    token_ = "";
+    filename_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new LoginRequest();
+    return new DeleteFileRequest();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private LoginRequest(
+  private DeleteFileRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,13 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            username_ = s;
+            token_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            password_ = s;
+            filename_ = s;
             break;
           }
           default: {
@@ -83,87 +83,87 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_descriptor;
+    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_DeleteFileRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_fieldAccessorTable
+    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_DeleteFileRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.zoominfo.drive.LoginRequest.class, org.zoominfo.drive.LoginRequest.Builder.class);
+            org.zoominfo.drive.DeleteFileRequest.class, org.zoominfo.drive.DeleteFileRequest.Builder.class);
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+  public static final int TOKEN_FIELD_NUMBER = 1;
+  private volatile java.lang.Object token_;
   /**
-   * <code>string username = 1;</code>
-   * @return The username.
+   * <code>string token = 1;</code>
+   * @return The token.
    */
   @java.lang.Override
-  public java.lang.String getUsername() {
-    java.lang.Object ref = username_;
+  public java.lang.String getToken() {
+    java.lang.Object ref = token_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      username_ = s;
+      token_ = s;
       return s;
     }
   }
   /**
-   * <code>string username = 1;</code>
-   * @return The bytes for username.
+   * <code>string token = 1;</code>
+   * @return The bytes for token.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getUsernameBytes() {
-    java.lang.Object ref = username_;
+      getTokenBytes() {
+    java.lang.Object ref = token_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      username_ = b;
+      token_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PASSWORD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object password_;
+  public static final int FILENAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object filename_;
   /**
-   * <code>string password = 2;</code>
-   * @return The password.
+   * <code>string filename = 2;</code>
+   * @return The filename.
    */
   @java.lang.Override
-  public java.lang.String getPassword() {
-    java.lang.Object ref = password_;
+  public java.lang.String getFilename() {
+    java.lang.Object ref = filename_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      password_ = s;
+      filename_ = s;
       return s;
     }
   }
   /**
-   * <code>string password = 2;</code>
-   * @return The bytes for password.
+   * <code>string filename = 2;</code>
+   * @return The bytes for filename.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getPasswordBytes() {
-    java.lang.Object ref = password_;
+      getFilenameBytes() {
+    java.lang.Object ref = filename_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      password_ = b;
+      filename_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -184,11 +184,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUsernameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+    if (!getTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
     }
-    if (!getPasswordBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
+    if (!getFilenameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filename_);
     }
     unknownFields.writeTo(output);
   }
@@ -199,11 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUsernameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+    if (!getTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
     }
-    if (!getPasswordBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
+    if (!getFilenameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filename_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,15 +215,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.zoominfo.drive.LoginRequest)) {
+    if (!(obj instanceof org.zoominfo.drive.DeleteFileRequest)) {
       return super.equals(obj);
     }
-    org.zoominfo.drive.LoginRequest other = (org.zoominfo.drive.LoginRequest) obj;
+    org.zoominfo.drive.DeleteFileRequest other = (org.zoominfo.drive.DeleteFileRequest) obj;
 
-    if (!getUsername()
-        .equals(other.getUsername())) return false;
-    if (!getPassword()
-        .equals(other.getPassword())) return false;
+    if (!getToken()
+        .equals(other.getToken())) return false;
+    if (!getFilename()
+        .equals(other.getFilename())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,78 +235,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getUsername().hashCode();
-    hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-    hash = (53 * hash) + getPassword().hashCode();
+    hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getToken().hashCode();
+    hash = (37 * hash) + FILENAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFilename().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(byte[] data)
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(java.io.InputStream input)
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.zoominfo.drive.DeleteFileRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.zoominfo.drive.LoginRequest parseDelimitedFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.DeleteFileRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.zoominfo.drive.LoginRequest prototype) {
+  public static Builder newBuilder(org.zoominfo.drive.DeleteFileRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code file_service.LoginRequest}
+   * Protobuf type {@code file_service.DeleteFileRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:file_service.LoginRequest)
-      org.zoominfo.drive.LoginRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:file_service.DeleteFileRequest)
+      org.zoominfo.drive.DeleteFileRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_descriptor;
+      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_DeleteFileRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_fieldAccessorTable
+      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_DeleteFileRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.zoominfo.drive.LoginRequest.class, org.zoominfo.drive.LoginRequest.Builder.class);
+              org.zoominfo.drive.DeleteFileRequest.class, org.zoominfo.drive.DeleteFileRequest.Builder.class);
     }
 
-    // Construct using org.zoominfo.drive.LoginRequest.newBuilder()
+    // Construct using org.zoominfo.drive.DeleteFileRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -372,9 +372,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      username_ = "";
+      token_ = "";
 
-      password_ = "";
+      filename_ = "";
 
       return this;
     }
@@ -382,17 +382,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_descriptor;
+      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_DeleteFileRequest_descriptor;
     }
 
     @java.lang.Override
-    public org.zoominfo.drive.LoginRequest getDefaultInstanceForType() {
-      return org.zoominfo.drive.LoginRequest.getDefaultInstance();
+    public org.zoominfo.drive.DeleteFileRequest getDefaultInstanceForType() {
+      return org.zoominfo.drive.DeleteFileRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.zoominfo.drive.LoginRequest build() {
-      org.zoominfo.drive.LoginRequest result = buildPartial();
+    public org.zoominfo.drive.DeleteFileRequest build() {
+      org.zoominfo.drive.DeleteFileRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,10 +400,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.zoominfo.drive.LoginRequest buildPartial() {
-      org.zoominfo.drive.LoginRequest result = new org.zoominfo.drive.LoginRequest(this);
-      result.username_ = username_;
-      result.password_ = password_;
+    public org.zoominfo.drive.DeleteFileRequest buildPartial() {
+      org.zoominfo.drive.DeleteFileRequest result = new org.zoominfo.drive.DeleteFileRequest(this);
+      result.token_ = token_;
+      result.filename_ = filename_;
       onBuilt();
       return result;
     }
@@ -442,22 +442,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.zoominfo.drive.LoginRequest) {
-        return mergeFrom((org.zoominfo.drive.LoginRequest)other);
+      if (other instanceof org.zoominfo.drive.DeleteFileRequest) {
+        return mergeFrom((org.zoominfo.drive.DeleteFileRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.zoominfo.drive.LoginRequest other) {
-      if (other == org.zoominfo.drive.LoginRequest.getDefaultInstance()) return this;
-      if (!other.getUsername().isEmpty()) {
-        username_ = other.username_;
+    public Builder mergeFrom(org.zoominfo.drive.DeleteFileRequest other) {
+      if (other == org.zoominfo.drive.DeleteFileRequest.getDefaultInstance()) return this;
+      if (!other.getToken().isEmpty()) {
+        token_ = other.token_;
         onChanged();
       }
-      if (!other.getPassword().isEmpty()) {
-        password_ = other.password_;
+      if (!other.getFilename().isEmpty()) {
+        filename_ = other.filename_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -475,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.zoominfo.drive.LoginRequest parsedMessage = null;
+      org.zoominfo.drive.DeleteFileRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.zoominfo.drive.LoginRequest) e.getUnfinishedMessage();
+        parsedMessage = (org.zoominfo.drive.DeleteFileRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -489,154 +489,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object username_ = "";
+    private java.lang.Object token_ = "";
     /**
-     * <code>string username = 1;</code>
-     * @return The username.
+     * <code>string token = 1;</code>
+     * @return The token.
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        username_ = s;
+        token_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string username = 1;</code>
-     * @return The bytes for username.
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
      */
     public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
+        getTokenBytes() {
+      java.lang.Object ref = token_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        username_ = b;
+        token_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string username = 1;</code>
-     * @param value The username to set.
+     * <code>string token = 1;</code>
+     * @param value The token to set.
      * @return This builder for chaining.
      */
-    public Builder setUsername(
+    public Builder setToken(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      username_ = value;
+      token_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string username = 1;</code>
+     * <code>string token = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUsername() {
+    public Builder clearToken() {
       
-      username_ = getDefaultInstance().getUsername();
+      token_ = getDefaultInstance().getToken();
       onChanged();
       return this;
     }
     /**
-     * <code>string username = 1;</code>
-     * @param value The bytes for username to set.
+     * <code>string token = 1;</code>
+     * @param value The bytes for token to set.
      * @return This builder for chaining.
      */
-    public Builder setUsernameBytes(
+    public Builder setTokenBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      username_ = value;
+      token_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object password_ = "";
+    private java.lang.Object filename_ = "";
     /**
-     * <code>string password = 2;</code>
-     * @return The password.
+     * <code>string filename = 2;</code>
+     * @return The filename.
      */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
+    public java.lang.String getFilename() {
+      java.lang.Object ref = filename_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        password_ = s;
+        filename_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string password = 2;</code>
-     * @return The bytes for password.
+     * <code>string filename = 2;</code>
+     * @return The bytes for filename.
      */
     public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
+        getFilenameBytes() {
+      java.lang.Object ref = filename_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        password_ = b;
+        filename_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string password = 2;</code>
-     * @param value The password to set.
+     * <code>string filename = 2;</code>
+     * @param value The filename to set.
      * @return This builder for chaining.
      */
-    public Builder setPassword(
+    public Builder setFilename(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      password_ = value;
+      filename_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string password = 2;</code>
+     * <code>string filename = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPassword() {
+    public Builder clearFilename() {
       
-      password_ = getDefaultInstance().getPassword();
+      filename_ = getDefaultInstance().getFilename();
       onChanged();
       return this;
     }
     /**
-     * <code>string password = 2;</code>
-     * @param value The bytes for password to set.
+     * <code>string filename = 2;</code>
+     * @param value The bytes for filename to set.
      * @return This builder for chaining.
      */
-    public Builder setPasswordBytes(
+    public Builder setFilenameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      password_ = value;
+      filename_ = value;
       onChanged();
       return this;
     }
@@ -653,41 +653,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:file_service.LoginRequest)
+    // @@protoc_insertion_point(builder_scope:file_service.DeleteFileRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:file_service.LoginRequest)
-  private static final org.zoominfo.drive.LoginRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:file_service.DeleteFileRequest)
+  private static final org.zoominfo.drive.DeleteFileRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.zoominfo.drive.LoginRequest();
+    DEFAULT_INSTANCE = new org.zoominfo.drive.DeleteFileRequest();
   }
 
-  public static org.zoominfo.drive.LoginRequest getDefaultInstance() {
+  public static org.zoominfo.drive.DeleteFileRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LoginRequest>
-      PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+  private static final com.google.protobuf.Parser<DeleteFileRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DeleteFileRequest>() {
     @java.lang.Override
-    public LoginRequest parsePartialFrom(
+    public DeleteFileRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LoginRequest(input, extensionRegistry);
+      return new DeleteFileRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<LoginRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteFileRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteFileRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.zoominfo.drive.LoginRequest getDefaultInstanceForType() {
+  public org.zoominfo.drive.DeleteFileRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

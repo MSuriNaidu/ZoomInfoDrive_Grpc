@@ -4,27 +4,28 @@
 package org.zoominfo.drive;
 
 /**
- * Protobuf type {@code file_service.LoginRequest}
+ * Protobuf type {@code file_service.SignupRequest}
  */
-public final class LoginRequest extends
+public final class SignupRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:file_service.LoginRequest)
-    LoginRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:file_service.SignupRequest)
+    SignupRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use LoginRequest.newBuilder() to construct.
-  private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SignupRequest.newBuilder() to construct.
+  private SignupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LoginRequest() {
+  private SignupRequest() {
     username_ = "";
     password_ = "";
+    email_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new LoginRequest();
+    return new SignupRequest();
   }
 
   @java.lang.Override
@@ -32,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private LoginRequest(
+  private SignupRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -62,6 +63,12 @@ private static final long serialVersionUID = 0L;
             password_ = s;
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            email_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -83,15 +90,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_descriptor;
+    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_SignupRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_fieldAccessorTable
+    return org.zoominfo.drive.FileServiceProto.internal_static_file_service_SignupRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.zoominfo.drive.LoginRequest.class, org.zoominfo.drive.LoginRequest.Builder.class);
+            org.zoominfo.drive.SignupRequest.class, org.zoominfo.drive.SignupRequest.Builder.class);
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
@@ -170,6 +177,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int EMAIL_FIELD_NUMBER = 3;
+  private volatile java.lang.Object email_;
+  /**
+   * <code>string email = 3;</code>
+   * @return The email.
+   */
+  @java.lang.Override
+  public java.lang.String getEmail() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      email_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string email = 3;</code>
+   * @return The bytes for email.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEmailBytes() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      email_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +235,9 @@ private static final long serialVersionUID = 0L;
     if (!getPasswordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
     }
+    if (!getEmailBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -205,6 +253,9 @@ private static final long serialVersionUID = 0L;
     if (!getPasswordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
     }
+    if (!getEmailBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -215,15 +266,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.zoominfo.drive.LoginRequest)) {
+    if (!(obj instanceof org.zoominfo.drive.SignupRequest)) {
       return super.equals(obj);
     }
-    org.zoominfo.drive.LoginRequest other = (org.zoominfo.drive.LoginRequest) obj;
+    org.zoominfo.drive.SignupRequest other = (org.zoominfo.drive.SignupRequest) obj;
 
     if (!getUsername()
         .equals(other.getUsername())) return false;
     if (!getPassword()
         .equals(other.getPassword())) return false;
+    if (!getEmail()
+        .equals(other.getEmail())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,74 +292,76 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUsername().hashCode();
     hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getPassword().hashCode();
+    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getEmail().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(byte[] data)
+  public static org.zoominfo.drive.SignupRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(java.io.InputStream input)
+  public static org.zoominfo.drive.SignupRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.zoominfo.drive.SignupRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.zoominfo.drive.LoginRequest parseDelimitedFrom(
+  public static org.zoominfo.drive.SignupRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.zoominfo.drive.LoginRequest parseFrom(
+  public static org.zoominfo.drive.SignupRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +374,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.zoominfo.drive.LoginRequest prototype) {
+  public static Builder newBuilder(org.zoominfo.drive.SignupRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +390,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code file_service.LoginRequest}
+   * Protobuf type {@code file_service.SignupRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:file_service.LoginRequest)
-      org.zoominfo.drive.LoginRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:file_service.SignupRequest)
+      org.zoominfo.drive.SignupRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_descriptor;
+      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_SignupRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_fieldAccessorTable
+      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_SignupRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.zoominfo.drive.LoginRequest.class, org.zoominfo.drive.LoginRequest.Builder.class);
+              org.zoominfo.drive.SignupRequest.class, org.zoominfo.drive.SignupRequest.Builder.class);
     }
 
-    // Construct using org.zoominfo.drive.LoginRequest.newBuilder()
+    // Construct using org.zoominfo.drive.SignupRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -376,23 +431,25 @@ private static final long serialVersionUID = 0L;
 
       password_ = "";
 
+      email_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_LoginRequest_descriptor;
+      return org.zoominfo.drive.FileServiceProto.internal_static_file_service_SignupRequest_descriptor;
     }
 
     @java.lang.Override
-    public org.zoominfo.drive.LoginRequest getDefaultInstanceForType() {
-      return org.zoominfo.drive.LoginRequest.getDefaultInstance();
+    public org.zoominfo.drive.SignupRequest getDefaultInstanceForType() {
+      return org.zoominfo.drive.SignupRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.zoominfo.drive.LoginRequest build() {
-      org.zoominfo.drive.LoginRequest result = buildPartial();
+    public org.zoominfo.drive.SignupRequest build() {
+      org.zoominfo.drive.SignupRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -400,10 +457,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.zoominfo.drive.LoginRequest buildPartial() {
-      org.zoominfo.drive.LoginRequest result = new org.zoominfo.drive.LoginRequest(this);
+    public org.zoominfo.drive.SignupRequest buildPartial() {
+      org.zoominfo.drive.SignupRequest result = new org.zoominfo.drive.SignupRequest(this);
       result.username_ = username_;
       result.password_ = password_;
+      result.email_ = email_;
       onBuilt();
       return result;
     }
@@ -442,22 +500,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.zoominfo.drive.LoginRequest) {
-        return mergeFrom((org.zoominfo.drive.LoginRequest)other);
+      if (other instanceof org.zoominfo.drive.SignupRequest) {
+        return mergeFrom((org.zoominfo.drive.SignupRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.zoominfo.drive.LoginRequest other) {
-      if (other == org.zoominfo.drive.LoginRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.zoominfo.drive.SignupRequest other) {
+      if (other == org.zoominfo.drive.SignupRequest.getDefaultInstance()) return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        onChanged();
+      }
+      if (!other.getEmail().isEmpty()) {
+        email_ = other.email_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -475,11 +537,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.zoominfo.drive.LoginRequest parsedMessage = null;
+      org.zoominfo.drive.SignupRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.zoominfo.drive.LoginRequest) e.getUnfinishedMessage();
+        parsedMessage = (org.zoominfo.drive.SignupRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -640,6 +702,82 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private java.lang.Object email_ = "";
+    /**
+     * <code>string email = 3;</code>
+     * @return The email.
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string email = 3;</code>
+     * @return The bytes for email.
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string email = 3;</code>
+     * @param value The email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmail(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      email_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmail() {
+      
+      email_ = getDefaultInstance().getEmail();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 3;</code>
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      email_ = value;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -653,41 +791,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:file_service.LoginRequest)
+    // @@protoc_insertion_point(builder_scope:file_service.SignupRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:file_service.LoginRequest)
-  private static final org.zoominfo.drive.LoginRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:file_service.SignupRequest)
+  private static final org.zoominfo.drive.SignupRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.zoominfo.drive.LoginRequest();
+    DEFAULT_INSTANCE = new org.zoominfo.drive.SignupRequest();
   }
 
-  public static org.zoominfo.drive.LoginRequest getDefaultInstance() {
+  public static org.zoominfo.drive.SignupRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LoginRequest>
-      PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+  private static final com.google.protobuf.Parser<SignupRequest>
+      PARSER = new com.google.protobuf.AbstractParser<SignupRequest>() {
     @java.lang.Override
-    public LoginRequest parsePartialFrom(
+    public SignupRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LoginRequest(input, extensionRegistry);
+      return new SignupRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<LoginRequest> parser() {
+  public static com.google.protobuf.Parser<SignupRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+  public com.google.protobuf.Parser<SignupRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.zoominfo.drive.LoginRequest getDefaultInstanceForType() {
+  public org.zoominfo.drive.SignupRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
