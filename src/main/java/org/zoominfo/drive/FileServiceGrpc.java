@@ -123,7 +123,7 @@ public final class FileServiceGrpc {
 
       public abstract void signup(SignupRequest request, StreamObserver<SignupResponse> responseObserver);
 
-    public abstract void uploadFile(UploadFileRequest request, StreamObserver<UploadFileResponse> responseObserver);
+    public abstract StreamObserver<UploadFileRequest> uploadFile(UploadFileRequest request, StreamObserver<UploadFileResponse> responseObserver);
 
     public abstract void uploadFolder(UploadFolderRequest request, StreamObserver<UploadFolderResponse> responseObserver);
 
