@@ -1,6 +1,7 @@
 package org.zoominfo.drive;
 
 import com.google.protobuf.ByteString;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @GRpcService
@@ -119,7 +121,41 @@ public class FileServiceImpl extends FileServiceGrpc.FileServiceImplBase {
 
     @Override
     public void uploadFolder(UploadFolderRequest request, StreamObserver<UploadFolderResponse> responseObserver) {
-        // Implement folder upload logic
+        try {
+
+            String folderName = request.getFolderName();
+            List<UploadFileRequest> folderItems = request.getFilesList();
+
+            // Create a folder to store the uploaded items
+            File folder = new File("uploads/" + folderName);
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+
+            // Iterate through folder items and save files or create subfolders
+            for (UploadFileRequest item : folderItems) {
+                String itemName = item.getFilename();
+                byte[] fileData = item.getData().toByteArray();
+
+                // Save the file
+                File file = new File(folder, itemName);
+                try (FileOutputStream fos = new FileOutputStream(file)) {
+                    fos.write(fileData);
+                }
+            }
+            UploadFolderResponse response = UploadFolderResponse.newBuilder()
+                    .setMessage("Folder uploaded successfully")
+                    .build();
+
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        } catch (Exception e) {
+            log.error("An Error occured while uploading a folder: " + e.getMessage());
+            responseObserver.onError(
+                    Status.INTERNAL
+                            .withDescription("Failed to upload folder: " + e.getMessage())
+                            .asRuntimeException());
+        }
     }
 
     @Override
